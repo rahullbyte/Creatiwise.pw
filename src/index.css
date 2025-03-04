@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Miedinger Bold";
+  src: url("/fonts/Miedinger-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Questrial";
+  src: url("/fonts/laborat-pro-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
