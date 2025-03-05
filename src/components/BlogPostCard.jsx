@@ -1,17 +1,32 @@
-import React from 'react';
+import React from "react";
 
-const BlogPostCard = ({ imageSrc, title, date, tags, buttonText, buttonUrl }) => {
+const BlogPostCard = ({ imageSrc, title, date, tags }) => {
   return (
-    <div className="bg-gray-800 p-4 rounded shadow">
-      <img src={imageSrc} alt={title} className="w-full h-48 object-cover mb-4" />
-      <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-      <p className="text-sm mb-4">{date}</p>
-      <div className="flex space-x-2 mb-4">
-        {tags.map((tag, index) => (
-          <span key={index} className="bg-blue-500 text-white px-2 py-1 rounded-full text-sm">{tag}</span>
-        ))}
+    <div className="flex flex-col md:flex-row p-4 gap-4 lg:gap-10">
+      <img
+        src={imageSrc}
+        alt={title}
+        className="w-full md:w-[286px] md:h-[214px] object-cover mb-4 font-Poppins rounded-3xl"
+      />
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full">
+        <div className="flex flex-col gap-2 md:gap-4 w-full">
+          <p className="text-sm md:text-base lg:text-lg mb-1 md:mb-2">{date}</p>
+          <h3 className="text-lg md:text-xl lg:text-3xl font-semibold mb-2 md:mb-4 font-Syne">{title}</h3>
+          <div className="flex flex-wrap gap-2 mb-2 md:mb-4">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="text-white px-4 py-1 rounded-full text-xs md:text-sm font-questrial border"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+        <a className="bg-white text-black px-4 md:px-6 py-2 rounded-full text-center text-sm font-Syne whitespace-nowrap">
+          Read
+        </a>
       </div>
-      <a href={buttonUrl} className="bg-white text-black px-4 py-2 rounded hover:bg-gray-200 block text-center">{buttonText}</a>
     </div>
   );
 };

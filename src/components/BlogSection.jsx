@@ -1,45 +1,48 @@
-import React from 'react';
-import BlogPostCard from './BlogPostCard';
+import React from "react";
+import BlogPostCard from "./BlogPostCard";
+import Star from "../assets/star.svg";
 
 const BlogSection = () => {
   const blogPosts = [
     {
-      imageSrc: '/ux-works.jpg',
-      title: 'How UX Works in Web',
-      date: 'Nov 8, 2023',
-      tags: ['UI/UX', 'WEB'],
-      buttonText: 'Read',
-      buttonUrl: '#'
+      imageSrc: "/Images/envelopeFirst.png",
+      title: "How UX works in web",
+      date: "Nov 9, 2023",
+      tags: ["UI", "UX"],
     },
     {
-      imageSrc: '/analysis-study.jpg',
-      title: 'Case Study - Analysis Application.',
-      date: 'Aug 18, 2022',
-      tags: ['CASE STUDY', 'PRINT'],
-      buttonText: 'Read',
-      buttonUrl: '#'
+      imageSrc: "/Images/application.png",
+      title: "Case study - Analysis Application.",
+      date: "Aug 18, 2022",
+      tags: ["DESIGN", "PRINT"],
     },
     {
-      imageSrc: '/skill-development.jpg',
-      title: '3 Ways to Develop Your Skill',
-      date: 'Feb 19, 2023',
-      tags: ['UI/UX', 'WEB'],
-      buttonText: 'Read',
-      buttonUrl: '#'
-    }
+      imageSrc: "/Images/envelope.png",
+      title: "3 ways to develop your skill",
+      date: "Feb 19, 2023",
+      tags: ["FIGMA", "WEB"],
+    },
   ];
 
   return (
-    <section className="bg-gray-900 text-white py-12 px-4">
-      <h2 className="text-3xl font-semibold text-center mb-8">
-        <span className="text-yellow-500">★</span> Blog
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <section className="bg-dark text-white pt-16 px-4 sm:px-8 md:px-12 lg:px-32">
+      <div className="flex justify-between items-center py-4">
+        <h2 className="flex items-center text-2xl md:text-3xl font-semibold font-Syne gap-2 text-white">
+          <img src={Star} alt="Star image" className="w-5 md:w-6" />
+          <span>Blog</span>
+        </h2>
+        <a
+          href="https://rahulbyte.dev"
+          className="block text-white hover:text-gray-300 underline text-sm md:text-base"
+        >
+          View all
+        </a>
+      </div>
+      <div className="grid grid-cols-1 gap-6 mx-auto">
         {blogPosts.map((post, index) => (
           <BlogPostCard key={index} {...post} />
         ))}
       </div>
-      <a href="#" className="block text-center text-white mt-8 hover:text-gray-300">View All</a>
     </section>
   );
 };

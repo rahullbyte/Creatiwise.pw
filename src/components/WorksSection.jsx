@@ -40,7 +40,7 @@ const WorksSection = () => {
         >
           view all
         </h1>
-      </div> 
+      </div>
       <div className="grid grid-cols-1 md:grid-rows-1 gap-2 sm:gap-4 md:gap-6 lg:gap-8 max-w-full mx-auto">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
